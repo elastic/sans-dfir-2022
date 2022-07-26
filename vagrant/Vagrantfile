@@ -1,0 +1,36 @@
+Vagrant.configure("2") do |config|
+
+  # Reads in `.env` file. Requires vagrant-env plugin
+  # vagrant plugin install vagrant-env
+  config.env.enable
+
+  config.vm.define "windows10" do |cfg|
+    # Supports vmware_desktop, virtualbox, and hyperv
+    cfg.vm.box = "baunegaard/win10pro-en"
+    cfg.vm.guest = "windows"
+    cfg.vm.communicator = "winrm"
+
+    cfg.vm.provider "vmware_desktop" do |v|
+      v.vmx["memsize"] = "2048"
+      v.vmx["numvcpus"] = "2"
+    end
+
+    cfg.vm.provider :virtualbox do |vb|
+      vb.name = "windows10"
+      vb.memory = 2048
+      vb.cpus = 2
+    end
+
+    cfg.vm.provision "install-shutup10", type: "shell" do |s|
+      s.path = "./provision/install-shutup10.ps1"
+    end
+    cfg.vm.provision "install-ea", type: "shell" do |s|
+      s.path = "./provision/install-elastic-agent.ps1"
+      s.env = {
+        "ELASTIC_STACK_VERSION" => ENV['ELASTIC_STACK_VERSION'],
+        "ENROLLMENT_URL" => ENV['ENROLLMENT_URL'],
+        "ENROLLMENT_TOKEN" => ENV['ENROLLMENT_TOKEN']
+      }
+    end
+  end
+end
