@@ -1,6 +1,7 @@
 # Title
 
 Speakers:
+
     - Derek Ditch (GitHub: @dcode)
     - Jessica David (GitHub: @jeska)
 
@@ -63,6 +64,19 @@ Mac and Linux. Set those to "true".
 
 ![](media/2022-07-26-14-38-05.png)
 
-Finally, click "Save" in the bottom right. Kibana will alert you that this will affect existing ennnndpoints. Go ahead and confirm.
+Finally, click "Save" in the bottom right. Kibana will alert you that this will affect existing endpoints. Go ahead and confirm.
 
+## Time for Action
 
+TODO:
+
+- Split out modules to separate repo
+- Build and publish docker container for config extractor
+- In entrypoint, update modules by env var, if set
+- Create docker-compose.yml with settings for DFIR talk cloud instance
+
+__DEMO__
+
+1. Execute docker container, pull in latest update
+2. Download and execute cobaltstrike payload in VM
+3. Observe results in Kibana
