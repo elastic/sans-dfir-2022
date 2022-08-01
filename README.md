@@ -7,16 +7,17 @@ Speakers:
 
 ## Setup the Environment
 
-Create an Elastic Cloud deployment (or you can set something up locally, checkout
-[peasead/elastic-container](https://github.com/peasead/elastic-container) for something you
-can spin up using docker-compose).
+There are two options for setting up your Elastic environment
+
+* Create an [Elastic Cloud deployment](cloud/README.md)
+* To set something up locally, checkout [peasead/elastic-container](https://github.com/peasead/elastic-container) for something you can spin up using `docker-compose`.
 
 At a minimum, you'll need Elasticsearch, Kibana, and the Integrations Server. Be sure to save your authentication
 credentials for the `elastic` user. You can place them in the `.env` file in the vagrant directory to have all your
 values in one place
 
 To use the provided scripts and virtual machine environment, you'll also need a system with enough resources,
-a working vagrant environment (`vmware_desktop`, `virtualbox`, and `hyperv` should all work. `vmware_desktop` was tested),
+a working vagrant environment (`vmware_desktop`, `virtualbox`, and `hyperv` should all work; `vmware_desktop` was tested),
 and a working Docker installation to run the script.
 
 ## Create an Endpoint Security policy
