@@ -5,6 +5,23 @@ Speakers:
     - Derek Ditch (GitHub: @dcode)
     - Jessica David (GitHub: @jeska)
 
+>>>
+    Malware can be 'fowl'
+    But we can 'quack' its secrets
+    With our friend malduck
+
+---
+
+Repos:
+
+- https://github.com/elastic/sans-dfir-2022
+- https://github.com/elastic/malware-exquacker
+- https://github.com/elastic/malware-exquacker-modules
+
+Slides:
+
+- [Cracking the Beacon - David, Ditch](media/Cracking%20the%20Beacon%20-%20David,%20Ditch.pdf)
+
 ## Setup the Environment
 
 There are two options for setting up your Elastic environment
@@ -14,12 +31,12 @@ There are two options for setting up your Elastic environment
 
 At a minimum, you'll need Elasticsearch, Kibana, and the Integrations Server. Be sure to save your authentication
 credentials for the `elastic` user. You can place them in the `.env` file in the vagrant directory to have all your
-values in one place.
+values in one place (though the script does not use these)..
 
 ### Recommended Setup
 
 To use the provided scripts and virtual machine environment, you'll also need a system with enough resources, a working `vagrant` environment (`vmware_desktop`, `virtualbox`, and `hyperv` should all work; `vmware_desktop` was tested),
-and a working Docker installation to run the script.
+and a working Docker installation to run the tool (doesn't need to be the same system).
 
 To setup `vagrant`, you may need to run/install one or more of the following:
 
@@ -37,8 +54,8 @@ Example:
 
 ```powershell
 .\elastic-agent.exe install
---url=https://ad77e2db35884217b118ef4a0cecac2e.fleet.us-central1.gcp.cloud.es.io:443
---enrollment-token=b1ZfQk80SUJJeVlFalFIODFBX3U6TFAtLTZPbUpRbHU5OWpldXhjVzh1Zw==
+--url=https://1a7218ca4ff87916267c4dc311f52149.fleet.us-central1.gcp.cloud.es.io:443
+--enrollment-token=MFBfTDh6VUxVclJUYko1WXdFX246RjktLVc4Z0JKZm5aWmJ0bnFhN1luYw==
 ```
 
 Paste those values into the `.env` file in the `vagrant` directory. You can either install the
@@ -83,13 +100,5 @@ Finally, click "Save" in the bottom right. Kibana will alert you that this will 
 
 TODO:
 
-- Split out modules to separate repo
 - Build and publish docker container for config extractor
 - In entrypoint, update modules by env var, if set
-- Create docker-compose.yml with settings for DFIR talk cloud instance
-
-__DEMO__
-
-1. Execute docker container, pull in latest update
-2. Download and execute cobaltstrike payload in VM
-3. Observe results in Kibana

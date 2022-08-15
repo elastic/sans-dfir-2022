@@ -17,10 +17,10 @@ if (!(Test-Path $agent_install_folder)) {
 }
 
 Write-Output "Downloading Elastic Agent"
-Invoke-WebRequest -UseBasicParsing -Uri $elastic_agent_url -OutFile "${install_dir}\elastic-agent-${STACK_VER}-windows-x86_64.zip" -Resume
+Invoke-WebRequest -UseBasicParsing -Uri $elastic_agent_url -OutFile "${install_dir}\elastic-agent-${STACK_VER}-windows-x86_64.zip"
 
 Write-Output "Installing Elastic Agent..."
-Write-Output "Unzipping Elastic Agent from $agent_install_folder\elastic-agent-${STACK_VER}-windows-x86_64.zip to $agent_install_folder"
+Write-Output "Unzipping Elastic Agent from ${install_dir}\elastic-agent-${STACK_VER}-windows-x86_64.zip to $agent_install_folder"
 Expand-Archive -Force -LiteralPath "${install_dir}\elastic-agent-${STACK_VER}-windows-x86_64.zip" -DestinationPath "$agent_install_folder"
 
 Rename-Item -Force "$agent_install_folder\elastic-agent-${STACK_VER}-windows-x86_64" "$agent_install_folder\Elastic-Agent"
