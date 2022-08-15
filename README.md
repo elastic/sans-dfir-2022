@@ -1,4 +1,4 @@
-# Title
+# Cracking the Beacon
 
 Speakers:
 
@@ -21,6 +21,10 @@ Repos:
 Slides:
 
 - [Cracking the Beacon - David, Ditch](media/Cracking%20the%20Beacon%20-%20David,%20Ditch.pdf)
+
+Blog:
+
+ - [Collecting Cobalt Strike Beacons with the Elastic Stack](https://www.elastic.co/security-labs/collecting-cobalt-strike-beacons-with-the-elastic-stack): This blog details instructions for configuring your Elastic Security Endpoint policies to capture up to 4MB of process memory when malware is detected.
 
 ## Setup the Environment
 
