@@ -96,9 +96,3 @@ Mac and Linux. Set those to "true".
 
 Finally, click "Save" in the bottom right. Kibana will alert you that this will affect existing endpoints. Go ahead and confirm.
 
-## Time for Action
-
-TODO:
-
-- Build and publish docker container for config extractor
-- In entrypoint, update modules by env var, if set
